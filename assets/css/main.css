@@ -2601,6 +2601,36 @@ input, select, textarea {
 
 			.image.fit img {
 				width: 100%;
+				height: auto;
+			}
+
+		/* 网页中间图片 剧中显示 */
+		.image.picCenter {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 100%;
+		}
+
+			.image.picCenter img {
+				display: block;
+				margin: auto;
+				width: 46rem;
+				height: auto;
+			
+			}
+		/* 网页中间图片 Left */
+		.image.pic {
+			display: block;
+			margin: 0 0 2em 0;
+			width: 100%;
+		}
+
+			.image.pic img {
+				/* display: block;
+				margin: auto; */
+				width: 46rem;
+				height: auto;
+			
 			}
 
 		.image.main {
