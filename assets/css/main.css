@@ -1848,7 +1848,8 @@ input, select, textarea {
 		position: relative;
 		text-align: center;
 		text-decoration: none;
-		text-transform: uppercase;
+		/* 全部大写  首字母大写*/
+		text-transform: capitalize;
 		white-space: nowrap;
 	}
 
@@ -2618,14 +2619,14 @@ input, select, textarea {
 				height: auto;
 			
 			}
-		/* 网页中间图片 Left */
-		.image.pic {
+		/* 网页 Left */
+		.image.picLeft {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
 		}
 
-			.image.pic img {
+			.image.picLeft img {
 				/* display: block;
 				margin: auto; */
 				width: 46rem;
@@ -3239,7 +3240,7 @@ input, select, textarea {
 
 		.wrapper > .inner {
 			padding: 5em 5em 3em 5em ;
-			max-width: 100%;
+			max-width: 80%;
 			width: 75em;
 		}
 
