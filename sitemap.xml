@@ -3,24 +3,18 @@
 
 
 <url>
- <loc>https://lgblog.github.io</loc>
- <priority>0.3</priority>
- <lastmod>2021-05-21</lastmod>
- <changefreq>weekly</changefreq>
+ <loc>https://lgblog.github.io </loc>
+ <lastmod>2021-05-21 </lastmod>
 </url>
 
 <url>
- <loc>https://lgblog.github.io/Pages/SerialDebug.html</loc>
- <priority>0.3</priority>
+ <loc>https://lgblog.github.io/Pages/SerialDebug.html </loc>
  <lastmod>2021-05-21</lastmod>
- <changefreq>weekly</changefreq>
 </url>
 
 <url>
- <loc>https://lgblog.github.io/Pages/TextView.html</loc>
- <priority>0.3</priority>
- <lastmod>2021-05-21</lastmod>
- <changefreq>weekly</changefreq>
+ <loc>https://lgblog.github.io/Pages/TextView.html </loc>
+ <lastmod>2021-05-21 </lastmod>
 </url>
 
 </urlset>
