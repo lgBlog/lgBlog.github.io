@@ -6,12 +6,6 @@
        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
 >
 
-<url>
- <loc>https://lgblog.github.io/generic.html</loc>
- <priority>0.3</priority>
- <lastmod>2021-05-21</lastmod>
- <changefreq>weekly</changefreq>
-</url>
 
 <url>
  <loc>https://lgblog.github.io</loc>
