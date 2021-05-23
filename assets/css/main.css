@@ -3309,11 +3309,11 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			min-height: 100vh;
+			min-height: 50vh;
 		}
 
 			body.is-ie .wrapper.fullscreen {
-				height: 100vh;
+				height: 50vh;
 			}
 
 			@media screen and (max-width: 1280px) {
