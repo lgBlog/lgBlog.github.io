@@ -3319,11 +3319,11 @@ input, select, textarea {
 			@media screen and (max-width: 1280px) {
 
 				.wrapper.fullscreen {
-					min-height: calc(100vh - 2.5em);
+					min-height: calc(50vh - 2.5em);
 				}
 
 					body.is-ie .wrapper.fullscreen {
-						height: calc(100vh - 2.5em);
+						height: calc(50vh - 2.5em);
 					}
 
 			}
