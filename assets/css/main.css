@@ -3041,8 +3041,8 @@ input, select, textarea {
 			border-radius: 0;
 			display: block;
 			position: relative;
-			width: 26em;
-		    height: 20em;
+			width: 0;
+		    height: 0;
 		}
 
 			.spotlights > section > .image img {
@@ -3117,9 +3117,14 @@ input, select, textarea {
 			transform: translateX(-1em);
 			opacity: 0;
 		}
+		/* 大于 980px 显示图片  */
+		@media screen and ( min-width: 980px) {
 
-		@media screen and (max-width: 1680px) {
-
+			.spotlights > section > .image {
+					/* width: 100%;  小屏幕时不显示图片*/
+					width: 26em;
+		    		height: 20em;
+				}
 			.spotlights > section > .content {
 				padding: 4em 4em 2em 4em ;
 			}
