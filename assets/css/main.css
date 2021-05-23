@@ -3036,23 +3036,21 @@ input, select, textarea {
 			min-height: 0;
 		}
  
-		.spotlights > section > .image {
+		.spotlights>section>.image {
 			background-repeat: no-repeat;
 			background-position: center center;
-			background-size: 100% auto;  
+			background-size: 100% auto;
 			border-radius: 0;
-			display: block;
+			display: none;
 			position: relative;
-			width: 0;
-		    height: 0;
 		}
 
-			.spotlights > section > .image img {
+			.spotlights>section>.image img {
 				border-radius: 0;
-				display: block;
+				display: none;
 			}
 
-			.spotlights > section > .image:before {
+			.spotlights>section>.image:before {
 				-moz-transition: opacity 1s ease;
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
@@ -3123,6 +3121,7 @@ input, select, textarea {
 		@media screen and ( min-width: 980px) {
 			
 			.spotlights > section > .image {
+					display: block;
 					/* width: 100%;  小屏幕时不显示图片*/
 					width: 26em;
 		    		height: 20em;
@@ -3139,9 +3138,8 @@ input, select, textarea {
 			}
 
 				.spotlights > section > .image {
-					/* width: 100%;  小屏幕时不显示图片*/
-					width: 0%;
-					height: 0%;
+					/* 小屏幕时不显示图片*/
+					display: none; 
 				}
 				.spotlights > section > .content {
 					width: 100%;
@@ -3160,10 +3158,9 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			.spotlights > section > .image {
-				/* height: 50vh;  小屏幕时不显示图片
+				/* 小屏幕时不显示图片
 				min-height: 15em; */
-				width: 0%;
-		    	height: 0%;
+				display: none;
 			}
 
 			.spotlights > section > .content {
