@@ -156,17 +156,19 @@ input, select, textarea {
 		text-decoration: none;
 	}
 
-		a:hover {
-			border-bottom-color: transparent;
-			color: #ffffff;
-		}
+	a:hover {
+		border-bottom-color: transparent;
+		color: #ffffff;
+	}
 
-	strong, b {
+	strong,
+	b {
 		color: #ffffff;
 		font-weight: bold;
 	}
 
-	em, i {
+	em,
+	i {
 		font-style: italic;
 	}
 
@@ -3119,7 +3121,7 @@ input, select, textarea {
 		}
 		/* 大于 980px 显示图片  */
 		@media screen and ( min-width: 980px) {
-
+			
 			.spotlights > section > .image {
 					/* width: 100%;  小屏幕时不显示图片*/
 					width: 26em;
@@ -3128,7 +3130,6 @@ input, select, textarea {
 			.spotlights > section > .content {
 				padding: 4em 4em 2em 4em ;
 			}
-
 		}
 
 		@media screen and (max-width: 980px) {
