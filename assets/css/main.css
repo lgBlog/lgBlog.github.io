@@ -3033,7 +3033,7 @@ input, select, textarea {
 		body.is-ie .spotlights > section {
 			min-height: 0;
 		}
-
+ 
 		.spotlights > section > .image {
 			background-repeat: no-repeat;
 			background-position: center center;
