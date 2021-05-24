@@ -3041,7 +3041,9 @@ input, select, textarea {
 			background-position: center center;
 			background-size: 100% auto;
 			border-radius: 0;
+			/*  默认隐藏 字面自适应里修改 */
 			display: none;
+			visibility: hidden;
 			position: relative;
 		}
 
@@ -3122,6 +3124,7 @@ input, select, textarea {
 			
 			.spotlights > section > .image {
 					display: block;
+					visibility: visible;
 					/* width: 100%;  小屏幕时不显示图片*/
 					width: 26em;
 		    		height: 20em;
@@ -3140,6 +3143,7 @@ input, select, textarea {
 				.spotlights > section > .image {
 					/* 小屏幕时不显示图片*/
 					display: none; 
+					visibility: hidden;
 				}
 				.spotlights > section > .content {
 					width: 100%;
@@ -3152,7 +3156,6 @@ input, select, textarea {
 					-ms-transform: translateY(1em);
 					transform: translateY(1em);
 				}
-
 		}
 
 		@media screen and (max-width: 736px) {
@@ -3161,6 +3164,7 @@ input, select, textarea {
 				/* 小屏幕时不显示图片
 				min-height: 15em; */
 				display: none;
+				visibility: hidden;
 			}
 
 			.spotlights > section > .content {
