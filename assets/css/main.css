@@ -1840,9 +1840,9 @@ input, select, textarea {
 
 		input[type="checkbox"]:checked + label:before,
 		input[type="radio"]:checked + label:before {
-			background: rgba(0, 0, 0, 0.35);
+			background: rgba(0, 0, 0, 0.15);
 			border-color: rgba(0, 0, 0, 0.45);
-			color: #b74e4e;
+			color: #1c4a49;
 			content: '\f00c';
 		}
 
