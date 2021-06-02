@@ -12,6 +12,12 @@
 	<meta name="keywords" content="COM Debug,debug uart,serial tool,COM" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="../assets/css/main.css" />
+	<!-- code hight light -->
+	<link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
+	<script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+	<link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCoreDefault.css" />
+	<script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+	<!--end code hight light -->
 	<noscript>
 		<link rel="stylesheet" href="../assets/css/noscript.css" />
 	</noscript>
@@ -26,7 +32,9 @@
 </head>
 
 <body class="is-preload">
-
+<script type="text/javascript">
+	SyntaxHighlighter.all();
+</script>
 	<!-- Header -->
 	<header id="header">
 		<a href="../index.html" class="title">Blog</a>
@@ -106,7 +114,7 @@
 					<span class="image picCenter"><img src="../images/com/pic03.jpg" alt="" /></span>
 					<span class="image picCenter"><img src="../images/com/pic04.jpg" alt="" /></span>
 					<h3>js script</h3>
-					<pre><code>(
+					<pre  class="brush:js;">(
     function main() {
         var str = receive.get();          //Read the Received string
         receive.write(str);               //Prints the received characters
@@ -129,8 +137,8 @@
 // len : Contains the number of bytes
 function BytesToValue(buf, index, len) {
     var val = 0;
-    for (var i = 0; i < len; i++) {
-        val = val << 8;
+    for (var i = 0; i &lt; len; i++) {
+        val = val &lt;&lt; 8;
         val = val + buf[i + index];
     }
     return val;
@@ -139,9 +147,9 @@ function BytesToValue(buf, index, len) {
 function StrToBytes(str) {
     var index = 0;
     var buf = new Array;
-    for (var i = 0; i < str.length; i++) {
-        while (str[i] == "«" || str[i] == " ") {
-            if (i < str.length)
+    for (var i = 0; i &lt; str.length; i++) {
+        while (str[i] == "«" || str[i] == " ") { //Remove useless characters
+            if (i &lt; str.length)
                 i++;
         }
         buf[index] = parseInt("0x" + str[i] + str[i + 1]);// Turn the string into a number.
@@ -149,19 +157,14 @@ function StrToBytes(str) {
         i += 2;
     }
     return buf;
-}
+}</pre>
 
-					</code></pre>
-					<script type="code">
-					    var code = "hello world";
-					</script>
 					<a href="https://www.microsoft.com/store/apps/9NBLGGH43HDM"
 						class="button icon solid fa-download">Download Serial Debug
 						Assistant </a>
+					<a  download href="analyse.js" target="_blank" class="button icon solid fa-download">analyse.js</a>
 			</div>
-
 		</section>
-
 	</div>
 
 	<!-- Footer -->
@@ -174,8 +177,6 @@ function StrToBytes(str) {
 		</div>
 	</footer>
 
-	<!-- Scripts -->
-	<script src="http://tigy.github.com/SyntaxHighlighter/syntaxhighlighter.min.js"></script>
 	<script src="../assets/js/jquery.min.js"></script>
 	<script src="../assets/js/jquery.scrollex.min.js"></script>
 	<script src="../assets/js/jquery.scrolly.min.js"></script>
