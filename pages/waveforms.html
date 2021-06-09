@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>Serial Debug Instructions for the use of waveforms</title>
+	<meta charset="utf-8" />
+	<meta name="keywords" content="搜索关键字" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta http-equiv='content-language' content='en-us'>
+	<meta name="description" content="">
+	<link rel="stylesheet" href="../assets/css/main.css" />
+	<noscript>
+		<link rel="stylesheet" href="../assets/css/noscript.css" />
+	</noscript>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYVBTNY71"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'G-JKYVBTNY71');
+	</script>
+</head>
+
+<body class="is-preload">
+
+	<!-- Header -->
+	<header id="header">
+		<a href="../index.html" class="title">Blog</a>
+		<nav>
+			<ul>
+				<li><a href="../index.html">Home</a></li>
+				<!-- <li><a href="generic.html" class="active">Generic</a></li> -->
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">Serial Debug waveform description</h1>
+				<!-- <ol></ol> -->
+				<span class="image picCenter"><img src="../images/com/pic02.png" alt="image" /></span>
+				<ol>
+					<li>Enter a name for the waveform.</li>
+					<li>Select the waveform color.</li>
+					<li>Click the Add button.</li>
+					<li>The waveform name you just added is displayed in the waveform list.</li>
+				</ol>
+				<p>The X-axis coordinate range 800 indicates that 800 X1 data is received before the X1 is drawn from 0
+					to 800 bits.</p>
+				<span class="image picCenter"><img src="../images/com/pic05.png" alt="image" /></span>
+				<p>Send waveform data to the PC. Use string format ASCII.</p>
+				<pre>
+				<code>Waveform format 
+Waveform name   Equal   value   Adorn
+      X1          =      200     ,</code>
+				</pre>
+				<p>There are two kinds of end symbols in English "," and one is the return change line break "\r\n".
+					<br>Two waveforms sent together can be split with ",".
+					<br>Here's the demo. Waveform name Case Sensitive</p>
+				<pre><code>"X1=100,"
+"X1=100\r\n"
+
+"X1=100,X2=200,"     printf("X1=100,X2=230,");
+"X1=100,X2=200\r\n"  printf("X1=100,X2=230\r\n");</code></pre>
+
+				<p>Note "\r\n" is used when using the function to represent a carriage return line break. Software delivery area can be
+directly pressed into the carriage, you can enter the return line break, not visible but the cursor will move to the
+next line, you can click on the hexadecimal send will find that the characters will have 16 decimal number 0D 0A.</p>
+				<a href="https://www.microsoft.com/store/apps/9NBLGGH43HDM"
+					class="button primary icon solid fa-download">Download Serial Debug Assistant </a>
+			</div>
+
+		</section>
+
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; Untitled. All rights reserved.</li>
+				<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
