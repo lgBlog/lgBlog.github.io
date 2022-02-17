@@ -2320,7 +2320,7 @@ input, select, textarea {
 				display: none;
 			}
 
-			.spotlights>section>.image:before {
+			/* .spotlights>section>.image:before {
 				-moz-transition: opacity 1s ease;
 				-webkit-transition: opacity 1s ease;
 				-ms-transition: opacity 1s ease;
@@ -2334,7 +2334,7 @@ input, select, textarea {
 				position: absolute;
 				top: 0;
 				width: 100%;
-			}
+			} */
 
 		.spotlights > section > .content {
 			padding: 4em 5em 2em 5em ;
@@ -2353,8 +2353,8 @@ input, select, textarea {
 			width: 50em;
 			/* -ms-flex: 1; */
 		}
-
-			.spotlights > section > .content > .inner {
+		/* 内容从左到右移动 */
+			/* .spotlights > section > .content > .inner {
 				-moz-transform: translateX(0) translateY(0);
 				-webkit-transform: translateX(0) translateY(0);
 				-ms-transform: translateX(0) translateY(0);
@@ -2364,7 +2364,7 @@ input, select, textarea {
 				-ms-transition: opacity 1s ease, -ms-transform 1s ease;
 				transition: opacity 1s ease, transform 1s ease;
 				opacity: 1;
-			}
+			} */
 
 		.spotlights > section:nth-child(2) {
 			background-color: rgba(0, 0, 0, 0.05);
@@ -2379,14 +2379,14 @@ input, select, textarea {
 			opacity: 1;
 		}
 
-		.spotlights > section.inactive > .content > .inner,
+		/* .spotlights > section.inactive > .content > .inner,
 		body.is-preload .spotlights > section > .content > .inner {
 			-moz-transform: translateX(-1em);
 			-webkit-transform: translateX(-1em);
 			-ms-transform: translateX(-1em);
 			transform: translateX(-1em);
-			opacity: 0;
-		}
+			opacity: 1;
+		} */
 		/* 大于 980px 显示图片  */
 		@media screen and ( min-width: 980px) {
 			
@@ -2492,7 +2492,7 @@ input, select, textarea {
 	.wrapper {position: relative;}
 
 		.wrapper > .inner {
-			padding: 5em 5em 3em 5em ;
+			padding: 30px 4em 2px 4em ;
 			max-width: 80%;
 			width: 75em;
 		}
@@ -2500,7 +2500,7 @@ input, select, textarea {
 			@media screen and (max-width: 1680px) {
 				.wrapper > .inner {
 					max-width: 80%;
-					padding: 4em 4em 2em 4em ;
+					padding: 30px 4em 2px 4em ;
 				}
 			}
 
@@ -2514,7 +2514,7 @@ input, select, textarea {
 			@media screen and (max-width: 736px) {
 				.wrapper > .inner {
 					max-width: 100%;
-					padding: 3em 1.4em 1em 1.4em;
+					padding: 2px 1.4em 2px 1.4em;
 				}
 			}
 
@@ -2539,14 +2539,14 @@ input, select, textarea {
 			-webkit-justify-content: center;
 			-ms-justify-content: center;
 			justify-content: center;
-			min-height: 50vh;
+			min-height: 30vh;
 		}
 
-			body.is-ie .wrapper.fullscreen {height: 50vh;}
+			body.is-ie .wrapper.fullscreen {height: 30vh;}
 
 			@media screen and (max-width: 1280px) {
-				.wrapper.fullscreen {min-height: calc(50vh - 2.5em);}
-					body.is-ie .wrapper.fullscreen {height: calc(50vh - 2.5em);}
+				.wrapper.fullscreen {min-height: calc(30vh - 2.5em);}
+					body.is-ie .wrapper.fullscreen {height: calc(30vh - 2.5em);}
 			}
 
 			@media screen and (max-width: 736px) {
