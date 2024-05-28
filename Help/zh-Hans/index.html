@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+
+<html lang="zh-hans">
+
+<head>
+    <title>帮助</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+    <script>
+        //customFontFamily='segoe print';
+        InitConfig();
+    </script>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">欢迎</a></li>
+                    <li><a href="#one">基础功能</a></li>
+                    <li><a href="#two">波形绘制</a></li>
+                    <li><a href="#three">脚本</a></li>
+                    <li><a href="#four">变更</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen ">
+            <div class="inner">
+                <h2>串口调试助手</h2>
+                <ul>
+                    <li>界面简洁美观，操作方便快捷，是你不可或缺的串口调试工具。</li>
+                    <li>无论是嵌入式软硬件开发还是工程数据调试，都能轻松应对。</li>
+                    <li>高速接收稳定、流畅、不卡顿、不丢数据。</li>
+                    <li>支持TCP/UDP调试</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- One -->
+        <section class="wrapper style2 spotlights">
+            <section id="one">
+                <div class="content">
+                    <div class="inner">
+                        <h3>基础功能</h3>
+                        <ul>
+                            <li>显示从串口接收到的数据，支持字符串和十六进制两种显示方式。</li>
+                            <li>可以正确显示中文字符。</li>
+                            <li>支持多种文本编码 ASCII、GB2312、UNICODE、UTF-8、BIG5、shift_jis，可在设置中更改编码类型。</li>
+                            <li>支持多种波特率，同时支持自定义波特率。（高于115200bps的波特率需要硬件支持）。</li>
+                            <li><strong>自动断帧：</strong> 在数据包的末尾附加换行符，换行显示下一包数据，方便观察数据变化。</li>
+                            <li><strong>扩展命令：</strong> 可以创建和保存多达600条扩展命令，每个命令可以发送一条数据。</li>
+                            <li><strong>命令列表：</strong> 一键发送扩展命令列表中的所有数据，自动执行每个命令。</li>
+                            <li><strong>脚本：</strong> 使用JavaScript脚本扩展功能（例如解析接收数据，绘制曲线，添加发送校验等）。</li>
+                            <li><strong>窗口置顶：</strong>保留在其他窗口之上。快捷键 "Ctrl + Shift + T" 开启、关闭</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="two">
+                <div class="content">
+                    <div class="inner">
+                        <h3>波形绘制</h3>
+                        <ul>
+                            <li>当接收到符合波形绘制协议的字符串时，将自动解析数据并绘制波形。</li>
+                            <li>使用Javascript脚本来解析接收数据，然后调用波形Api来绘制波形，无需修改发送数据。</li>
+                            <li>在同一个窗口中创建多个视图，拖动波形名称来切换视图。</li>
+                            <li>打开多个波形窗口，分别显示不同的波形数据。</li>
+                            <li>支持导入导出数据。</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="waveforms.html" class="button"> 波形使用说明 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="three">
+                <div class="content">
+                    <div class="inner">
+                        <h3>脚本介绍</h3>
+                        <p>App集成了的 JS V8 引擎，支持JavaScript的
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">
+                                标准内置对象
+                            </a>
+                        </p>
+                        <ul>
+                            <li>脚本功能分为接收和发送两种，可以通过勾选复选框来开启或关闭。</li>
+                            <li>开启脚本功能后，相应的窗口会显示红色的提示框，表示脚本正在运行。</li>
+                            <li>接收脚本会在每次收到数据包时执行，对数据进行处理，需要使用<strong> 'receive.write()' </strong>把处理结果发送到显示窗口。</li>
+                            <li>发送脚本会在每次发送数据时执行，对数据进行处理（如添加校验等），并用<strong> 'send.write()' </strong>把处理后的数据发送到串口设备。</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsAPI.html" class="button "> 脚本 API 详情 </a></li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsExample.html" class="button "> 参考示例 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- four -->
+        <section id="four" class="wrapper style2 fade-up">
+            <div class="inner">
+                <h3>变更</h3>
+                <p>版本V9.1.1
+                    <br> 1. 新增接收窗口搜索框。打开："Ctrl + F"，关闭 "Esc"。
+                    <br> 2. 新增网络调试，支持 TCP UDP。
+                </p>
+                <p>版本V9.0.20
+                    <br> 1. 新增自定义字体。
+                    <br> 2. 新增重置脚本运行环境。<img src="../assets/images/pic01.png" class="pImg">
+                </p>
+                <p>版本V9.0.0
+                    <br> <a href="JsAPI.html" style="color:#de5c5f;">1. Js脚本API有重大中断性变更。部分API不再兼容。</a>
+                    <br> <a href="waveforms.html">2. 增强的波形控件。</a>
+                    <br> 3. 扩展命令、脚本编辑、波形显示、可使用独立窗口。
+                    <br> 4. 窗口置顶 "Ctrl + Shift + T" 开启。
+                    <br> 5. 可使能开硬件流控制（CTS、RTS）。
+                </p>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

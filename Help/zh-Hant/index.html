@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<html lang="zh-hant">
+
+<head>
+    <title>帮助</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+
+<body class="is-preload">
+    <script> 
+        InitConfig(); 
+    </script>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">歡迎</a></li>
+                    <li><a href="#one">基礎功能</a></li>
+                    <li><a href="#two">波形繪製</a></li>
+                    <li><a href="#three">腳本</a></li>
+                    <li><a href="#four">變更</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen ">
+            <div class="inner">
+                <h2>串口調試助手</h2>
+                <ul>
+                    <li>介面簡潔美觀，操作方便快捷，是你不可或缺的串口調試工具。</li>
+                    <li>無論是嵌入式軟硬體開發還是工程數據調試，都能輕鬆應對。</li>
+                    <li>高速接收穩定、流暢、不卡頓、不丟數據。</li>
+                    <li>支援TCP/UDP調試</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- One -->
+        <section class="wrapper style2 spotlights">
+            <section id="one">
+                <div class="content">
+                    <div class="inner">
+                        <h3>基礎功能</h3>
+                        <ul>
+                            <li>顯示從串口接收到的數據，支援字串和十六進位兩種顯示方式</li>
+                            <li>可以正確顯示中文字元。</li>
+                            <li>支援多種文本編碼 ASCII、GB2312、UNICODE、UTF-8、BIG5、shift_jis，可在設置中更改編碼類型。</li>
+                            <li>支援多種波特率，同時支援自定義波特率。 （高於115200bps的波特率需要硬體支援）。</li>
+                            <li><strong>自動斷幀：</strong> 在數據包的末尾附加換行符，換行顯示下一包數據，方便觀察數據變化。</li>
+                            <li><strong>擴展命令：</strong> 可以創建和保存多達600條擴展命令，每個命令可以發送一條數據。</li>
+                            <li><strong>命令清單：</strong> 一鍵發送擴展命令清單中的所有資料，自動執行每個命令。</li>
+                            <li><strong>腳本：</strong> 使用JavaScript腳本擴展功能（例如解析接收數據，添加發送校驗等）。</li>
+                            <li><strong>窗口置頂：</strong>保留在其他窗口之上。快捷鍵"Ctrl + Shift + T" 開啟、關閉</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="two">
+                <div class="content">
+                    <div class="inner">
+                        <h3>波形繪製</h3>
+                        <ul>
+                            <li>當接收到符合波形繪製協議的字符串時，將自動解析數據並繪製波形。</li>
+                            <li>使用Javascript腳本來解析接收數據，然後調用波形Api來繪製波形，無需修改發送數據。</li>
+                            <li>在同一個視窗中創建多個視圖，拖動波形名稱來切換視圖。</li>
+                            <li>打開多個波形視窗，分別顯示不同的波形數據。</li>
+                            <li>支援導入匯出數據。</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="waveforms.html" class="button"> 波形使用說明 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="three">
+                <div class="content">
+                    <div class="inner">
+                        <h3>腳本介紹</h3>
+                        <p>App集成了的 JS V8 引擎，支援JavaScript的
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">
+                                標準內置物件
+                            </a>
+                        </p>
+                        <ul>
+                            <li>腳本功能分為接收和發送兩種，可以通過勾選複選框來開啟或關閉。</li>
+                            <li>開啟腳本功能后，相應的視窗會顯示紅色的提示框，表示腳本正在運行。</li>
+                            <li>接收腳本會在每次收到數據包時執行，對數據進行處理，需要使用<strong> 'receive.write()' </strong>把處理結果發送到顯示視窗。</li>
+                            <li>發送腳本會在每次發送數據時執行，對數據進行處理（如添加校驗等），並用<strong> 'send.write()' </strong>把處理後的數據發送到串口設備。</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsAPI.html" class="button "> 腳本 API 詳情 </a></li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsExample.html" class="button "> 參考範例 </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- four -->
+        <section id="four" class="wrapper style2 fade-up">
+            <div class="inner">
+                <h3>變更</h3>
+                <p>版本V9.1.1
+                    <br> 1. 新增接收視窗搜尋框。 開啟："Ctrl + F"，關閉 "Esc"。
+                    <br> 2. 新增網路調試，支援 TCP UDP。
+                </p>
+                <p>版本V9.0.20
+                    <br> 1. 新增自訂字體。
+                    <br> 2. 新增重置腳本運行環境。<img src="../assets/images/pic01.png" class="pImg">
+                </p>
+                <p>版本V9.0
+                    <br> <a href="JsAPI.html" style="color:#de5c5f;">1. Js腳本API有重大中斷性變更。 部分API不再相容。</a>
+                    <br> <a href="waveforms.html">2. 增強的波形控制。</a>
+                    <br> 3. 擴展命令、腳本編輯、波形顯示、可使用獨立視窗。
+                    <br> 4. 窗口置頂 "Ctrl + Shift + T" 開啟。
+                    <br> 5. 可以啟用硬體流控制（CTS、RTS）。 
+                </p>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

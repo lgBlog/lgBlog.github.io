@@ -1,0 +1,482 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <title>腳本API介紹</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- code hight light -->
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shThemeRDark.css" />
+    <script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+    <script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+    <!--end code hight light -->
+</head>
+
+<body class="is-preload">
+    <script> 
+        InitConfig(); 
+    </script>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back(-1);">Back</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#header">中斷性變更</a></li>
+                    <li><a href="#receive">receive</a></li>
+                    <li><a href="#send">send</a></li>
+                    <li><a href="#chart">chart</a></li>
+                    <li><a href="#console">console</a></li>
+                    <li><a href="#util">util</a></li>
+                    <li><a href="#other">other</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+    
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section class="wrapper">
+            <div class="inner">
+                <h2  style="color:#de5c5f;">中斷性變更</h2>
+                <ul>
+                    <li>receive.isHexDisplay(); 變更為 receive.isHexDisplay;</li>
+                    <li>receive.isAutoBreakFrame(); 變更為 receive.isAutoBreakFrame;</li>
+                    <li>this.SourceDataBuffer; 已刪除 建議使用 <a href="#sendMethod">send.getBytes();</a></li>
+                </ul>
+
+                <!-- receive -->
+                <h2 id="receive">receive 類</h2>
+                <p>跟接收數據相關的屬性和方法。</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>屬性</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>receive.isFrameStart</td>
+                                <td>幀開始標誌</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isHexDisplay</td>
+                                <td>是否Hex顯示</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isSaveToFile</td>
+                                <td>是否保存到檔</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isPauseReceivingDisplay</td>
+                                <td>是否暫停接收</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isAutoBreakFrame</td>
+                                <td>是否自動斷幀</td>
+                            </tr>
+                            <tr>
+                                <td>receive.currentRowIsEmpty</td>
+                                <td>接收視窗當前行是否為空</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>receive.get()</td>
+                                <td>參考 receive.getString()</td>
+                            </tr>
+                            <tr>
+                                <td>receive.getString()</td>
+                                <td>當前接收的字串
+                                    <br>1.使用字元編碼轉換后的字串()
+                                    <br>2.Hex格式的字串(當使能十六進制顯示時)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>receive.getBytes()</td>
+                                <td>目前接收到的位元組陣列（原始資料）</td>
+                            </tr>
+                            <tr>
+                                <td>receive.write(string)</td>
+                                <td>向顯示視窗寫入字串<br /><strong>string</strong> 要發送的字串</td>
+                            </tr>
+                            <tr>
+                                <td>receive.write(string,colorStr)</td>
+                                <td>向顯示視窗寫入字串
+                                    <br><strong>string</strong> 要發送的字串
+                                    <br><strong>colorStr</strong> 顏色字串。 例如 "red" "yellow" "#FF00FF00"
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>receive.clearLastReceived()</td>
+                                <td>清空上次接收數據</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- send -->
+                <h2 id="send">send 類</h2>
+                <p>跟發送數據相關的屬性和方法。</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>屬性</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>send.isSendFile</td>
+                                <td>是否發送檔</td>
+                            </tr>
+                            <tr>
+                                <td>send.isHexSend</td>
+                                <td>是否Hex發送</td>
+                            </tr>
+                            <tr>
+                                <td>send.isTimingSend</td>
+                                <td>是否定時發送</td>
+                            </tr>
+                            <tr>
+                                <td>send.isDisplaySendString</td>
+                                <td>是否顯示發送字串</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sendMethod" class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>send.get()</td>
+                                <td>當前發送的字串</td>
+                            </tr>
+                            <tr>
+                                <td>send.getString()</td>
+                                <td>當前發送的字串</td>
+                            </tr>
+                            <tr>
+                                <td>send.getBytes()</td>
+                                <td>獲取當前發送位元組陣組</td>
+                            </tr>
+                            <tr>
+                                <td>send.write(string)</td>
+                                <td>發送字串</td>
+                            </tr>
+                            <tr>
+                                <td>send.write(string,isHexStr)</td>
+                                <td>是否是發送HEX格式的字串
+                                    <br><strong>string</strong> 要發送的字串
+                                    <br><strong>isHexStr</strong> 字串是否是十六進位樣式
+                                    <br>例如：
+                                    <br><code>send.write("AB CD 12",true);</code>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>send.writeBytes(Array)</td>
+                                <td>發送位元組陣組
+                                    <br><strong>Array</strong> Uint8Array陣列，其他類型會先轉換為Uint8Array再發送。
+                                    <pre><code>//創建長度為10的陣列，初始化后併發送
+buf = new Uint8Array(10);
+for (let i = 0; i < 10; i++) 
+    buf[i]=i; 
+send.writeBytes(buf);
+
+//Array 類型陣列
+buf = Array(2, 3, 4, "5");
+send.writeBytes(buf);
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>send.writeToReceice(string)</td>
+                                <td>從發送文稿向接收視窗寫字串
+                                    <br>建議使用 receive.write(string)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>send.writeToReceice(string,color)</td>
+                                <td>從發送文稿向接收視窗寫字串
+                                    <br>建議使用 receive.write(string,colorStr)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="chart">chart</h2>
+                <p>繪圖控件操作類，包含向繪圖控件發送數據的方法</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>chart.write(formatStr)</td>
+                                <td>向繪圖控件寫入數據
+                                    <br><strong>formatStr</strong> 符合繪圖協定的字串
+                                    <br>例如:
+                                    <br><code>chart.write("line1=12.2\n");</code>
+                                    <br><code>chart.write("line1=100,line2=200\n");</code>
+                                </td>
+                            </tr>
+                       
+                            <tr>
+                                <td>chart.write(name,datas)</td>
+                                <td>向繪圖控件寫入數據
+                                    <br><strong>name</strong> 波形名稱
+                                    <br><strong>datas</strong> 波形資料（支援數值，字串，陣列）
+                                    <br>例如：
+                                    <br><code>chart.write("line1",100);</code>
+                                    <br><code>chart.write("line1","200");</code>
+                                    <br><code>chart.write("line1",[20,"10",50]);</code>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="console">console</h2>
+                <p>列印調試資訊到輸出視窗</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>console.log(obj)</td>
+                                <td>列印到輸出視窗</td>
+                            </tr>
+                            <tr>
+                                <td>console.dir(obj)</td>
+                                <td>格式化列印</td>
+                            </tr>
+                            <tr>
+                                <td>console.error(obj)</td>
+                                <td>錯誤 紅色</td>
+                            </tr>
+                            <tr>
+                                <td>console.warn(obj)</td>
+                                <td>警告 深綠色</td>
+                            </tr>
+                            <tr>
+                                <td>console.write(obj,,,color)</td>
+                                <td>列印物件
+                                    <br><strong>obj,,,</strong> 支援多個參數
+                                    <br><strong>color</strong> 最後一個參數，可控制字元顏色
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>console.time()</td>
+                                <td>開始計時</td>
+                            </tr>
+                            <tr>
+                                <td>console.timeEnd()</td>
+                                <td>結束計時，並在輸出視窗列印所用時間。
+                                    <br>和console.time()配合使用統計代碼運行時間
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2 id="util">util</h2>
+                <p>輔助工具類</p>
+                <div class="table-wrapper">
+
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>util.isNull(object)</td>
+                                <td>是否為null</td>
+                            </tr>
+                            <tr>
+                                <td>util.isNullOrUndefined(object)</td>
+                                <td>是否為null或未定義</td>
+                            </tr>
+                            <tr>
+                                <td>util.isUndefined(object)</td>
+                                <td>是否未定義</td>
+                            </tr>
+                            <tr>
+                                <td>util.timeToString()</td>
+                                <td>獲取時間字符串 h:m:s.ms</td>
+                            </tr>
+                            <tr>
+                                <td>util.hexStringToBytes(string)</td>
+                                <td>字符串轉字節數組
+                                    <br> <strong>string</strong> 十六進制格式字符串 <code>"68 65 6C 6C 6F"</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesToHexString(bytes)</td>
+                                <td>字節數組轉為16進製字符串</td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesToInteger(buf, index, len, bigEndian = true)</td>
+                                <td>字節數組轉整數
+                                    <br><strong>buf</strong> 字節數組
+                                    <br><strong>index</strong> 起始索引
+                                    <br><strong>len</strong> 整數佔用位元組數量
+                                    <br><strong>bigEndian</strong> 使用大端字節順序
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesTofloat(buf, index, bigEndian = true)</td>
+                                <td>IEEE754 float 內存數組(4字節) 轉為 float
+                                    <br><strong>buf</strong> 字節數組
+                                    <br><strong>index</strong> 起始索引
+                                    <br><strong>bigEndian</strong> 使用大端字節順序
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>類型檢查</h3>
+                    <table class="alt">
+                        <tbody>
+                            <tr>
+                                <td>util.types.isBoolean(object)</td>
+                                <td>是否布爾類型</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isNumber(object)</td>
+                                <td>是否數位</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isString(object)</td>
+                                <td>是否字串</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isFunction(object)</td>
+                                <td>是否函數</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isInt8Array(object)</td>
+                                <td>是否 8 位有符號整數數位</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isUint8Array(object)</td>
+                                <td>是否 8 位無符號整數陣列</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isInt16Array(object)</td>
+                                <td>是否 16 位有符號整數陣列</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isUint16Array(object)</td>
+                                <td>是否 16 位無符號整數陣列</td>
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="other">其他</h2>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>alert(title, message)</td>
+                                <td>顯示警告框
+                                    <br><strong>title</strong> 標題
+                                    <br><strong>message</strong> 消息
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>delay(ms)</td>
+                                <td>異步延時 (謹慎使用)
+                                    <br><strong>ms</strong> 毫秒
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sleep(ms)</td>
+                                <td>掛起線程 (謹慎使用)
+                                    <br><strong>ms</strong> 毫秒
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

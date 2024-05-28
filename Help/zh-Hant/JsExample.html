@@ -1,0 +1,145 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Js example</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- code hight light -->
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCoreDefault.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shThemeRDark.css" />
+    <script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+    <script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+
+</head>
+
+<body class="is-preload">
+    <script type="text/javascript">
+        InitConfig();
+        SyntaxHighlighter.all();
+    </script>
+    <!-- Header -->
+    <header id="header" style="background-color: transparent;">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back(-1);">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Js 腳本示例</h1>
+                <h3>1. 解析通訊協議並繪製曲線</h3>
+
+                <pre class="brush:js;">
+					(function main() {
+						var str = receive.getString(); //Read the Received string
+						receive.write(str); //Prints the received characters
+						receive.write(" -> ", "red"); //Print the arrow
+						
+						var buf = util.hexStringToBytes(str); //Turn the received hex string into an array.
+						var val1 = util.bytesToInteger(buf, 7, 2); // val1 Turn the array into integers by index and length
+						var val2 = util.bytesToInteger(buf, 9, 2); // val2
+						receive.write('val1=' + val1 + " ", "LawnGreen"); //Print the converted integer
+						receive.write('val2=' + val2, "yellow");
+						receive.write("\r\n"); //Print line breaks for easy observation.
+						
+						chart.write("val1=" + val1 + "\n"); //Draw to waveform interface. The name is val1
+						chart.write("val2=" + val2 + "\n"); //Draw to waveform interface. The name is val2
+					})();
+				</pre>
+                <span class="image picCenter"><img src="../assets/images/jsChart.png" /></span>
+                <h3>2. 獲取時間字符串</h3>
+                <pre class="brush:js;">
+					// Format  10:48:59.671  h:m:s.ms
+					function timeToString() {
+						let d = new Date();
+						let h = d.getHours().toString().padStart(2, '0');
+						let m = d.getMinutes().toString().padStart(2, '0');
+						let s = d.getSeconds().toString().padStart(2, '0');
+						let ms = d.getMilliseconds().toString().padStart(3, '0');
+						return h + ":" + m + ":" + s + "." + ms;
+					}
+				</pre>
+                <h3>3. 十六進位字串轉位十進位</h3>
+                <pre class="brush:js;">
+                    /********************************
+                    *
+                    * Notes: 十六進位字串轉位十進位
+                    *
+                    *
+                    *
+                    *
+                    *******************************/
+                    
+                    {
+                        let str = receive.getString();       //讀取接收到的字串
+                        receive.write(str);                  //輸出到接收視窗
+                        receive.write(" -> ", "DarkOrange"); //輸出箭頭
+                        
+                        let buf = util.hexStringToBytes(str);     //轉為位元組數組
+                        let val = util.bytesToInteger(buf, 0, 2); // 轉為 int16;
+                        
+                        console.log(val); //列印到輸出視窗
+                        receive.write(val.toString(), "DarkOrange"); //輸出轉換後的數值
+                    }
+
+                    
+                </pre>
+                <h3>4. 整數轉為字串 </h3>
+                <pre class="brush:js;">
+                        val = 10;
+                        let str1 = val.toString();   //轉十進位字串 '10'
+                        let str2 = val.toString(16); //轉十六進位字串 'a'
+                        let str3 = val.toString(8);  //轉八進位字串 '12'
+                        let str4 = val.toString(2);  //轉二進位字串 '1010'
+                        let str5 = val.toString(2).padStart(8, '0'); //轉二進位字串不足8位填入0 '00001010'
+                </pre>
+                <h3>5. 列印函數原始碼 </h3>
+                <pre class="brush:js;">
+                    (function main() {
+                        console.dir(util.bytesToInteger);
+                    })();
+
+                </pre>
+                <span class="image picCenter"><img src="../assets/images/pic04.png" /></span>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

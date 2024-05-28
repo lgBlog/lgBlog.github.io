@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+	<title>波形使用说明</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<link rel="shortcut icon" href="../logo.ico" />
+	<script src="../assets/js/theme.js"></script>
+	<link rel="stylesheet" href="../assets/css/main.css" />
+
+</head>
+
+<body class="is-preload">
+	<script>
+		InitConfig(); 
+	</script>
+	<!-- Header -->
+	<header id="header" style="background-color: transparent;">
+		<nav>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="javascript:history.back(-1);">Back</a></li>
+			</ul>
+		</nav>
+	</header>
+
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+			<div class="inner">
+				<h1 class="major">波形绘制</h1>
+
+				<h2>添加波形信息</h2>
+				<span class="image picCenter"><img src="../assets/images/Graph11.jpg"
+						alt="waveform description" /></span>
+				<ol>
+					<li>输入波形名称。</li>
+					<li>选择波形颜色。</li>
+					<li>单击添加按钮。</li>
+					<li>刚刚添加的波形名称将显示在波形列表中。</li>
+				</ol>
+				<h2>绘制</h2>
+				<span class="image picCenter"><img src="../assets/images/Graph13.jpg" alt="serial debug" /></span>
+				<p>当串口收到符合波形绘制格式的字符串时，会自动绘制到波形界面。</p>
+				<h2> 波形格式</h3>
+					<div class="table-wrapper">
+						<table class="alt">
+							<thead>
+								<tr>
+									<th>波形名称</th>
+									<th>等号</th>
+									<th>值</th>
+									<th>结束符</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>X1</td>
+									<td>=</td>
+									<td>200</td>
+									<td>\r\n</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p>使用"\r\n"作为一条绘制的结束
+						<br>多条波形可使用英文 "," 分割.
+						<br>这是演示。 波形名称 区分大小写
+					</p>
+					<pre><code>"X1=100,"
+"X1=100\r\n"
+
+"X1=100,X2=200,"     printf("X1=100,X2=230,");
+"X1=100,X2=200\r\n"  printf("X1=100,X2=230\r\n");</code></pre>
+
+					<p>注意使用print()函数时使用“\r\n”来表示回车换行符。
+						软件发送区可以直接按回车输入回车换行符，不可见但光标会移动到下一行，可以点击十六进制发送会发现字符会有16个十进制数0D 0A 。</p>
+
+					<h2>坐标轴设置</h2>
+
+					<span class="image picCenter"><img src="../assets/images/Graph02.jpg"
+							alt="waveform description" /></span>
+					<h2>操作说明</h2>
+					<ol>
+						<li> Y轴坐标自动调整。
+							<br><strong>开：</strong>根据输入数据自动调整坐标范围。
+							<br><strong>关：</strong>需要自己输入坐标最大值和最小值。
+						</li>
+						<li> 自动暂停： 波形长度超过一屏显示时，按下鼠标左键并向右滑动，会自动启动波形暂停功能，方便对波形进行观测。</li>
+
+					</ol>
+					<h3>缩放</h3>
+					<ol>
+						<li>Ctrl + 滚轮 -> 波形缩放</li>
+						<li>X + 滚轮 -> 单独对X轴坐标范围进行缩放。</li>
+						<li>Y + 滚轮 -> 单独对Y轴坐标范围进行缩放。</li>
+					</ol>
+                     
+                    <span class="image picCenter"><img src="../assets/images/pic06.png"   /></span>
+			</div>
+		</section>
+	</div>
+
+	<!-- Footer -->
+	<footer id="footer" class="wrapper alt">
+		<div class="inner">
+			<ul class="menu">
+				<li>&copy; lingguang. All rights reserved.</li>
+			</ul>
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="../assets/js/jquery.min.js"></script>
+	<script src="../assets/js/jquery.scrollex.min.js"></script>
+	<script src="../assets/js/jquery.scrolly.min.js"></script>
+	<script src="../assets/js/browser.min.js"></script>
+	<script src="../assets/js/breakpoints.min.js"></script>
+	<script src="../assets/js/util.js"></script>
+	<script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

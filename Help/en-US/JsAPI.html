@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="zh">
+
+<head>
+    <title>Script API Introduction</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+
+    <!-- code hight light -->
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shThemeRDark.css" />
+    <script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+    <script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+    <!--end code hight light -->
+</head>
+
+<body class="is-preload">
+    <script>
+        InitConfig();
+    </script>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="javascript:history.back(-1);">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#header">Change</a></li>
+                    <li><a href="#receive">receive</a></li>
+                    <li><a href="#send">send</a></li>
+                    <li><a href="#chart">chart</a></li>
+                    <li><a href="#console">console</a></li>
+                    <li><a href="#util">util</a></li>
+                    <li><a href="#other">other</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section class="wrapper">
+            <div class="inner">
+                <h2 style="color:#de5c5f;">Breaking change</h2>
+                <ul>
+                    <li>receive.isHexDisplay(); changed to receive.isHexDisplay;</li>
+                    <li>receive.isAutoBreakFrame(); changed to receive.isAutoBreakFrame;</li>
+                    <li>this.SourceDataBuffer; Removed Recommended to use <a href="#sendMethod">send.getBytes();</a>
+                    </li>
+                </ul>
+
+                <!-- receive -->
+                <h2 id="receive">receive class</h2>
+                <p>Properties and methods related to receiving data.</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>receive.isFrameStart</td>
+                                <td>start of frame flag</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isHexDisplay</td>
+                                <td>Whether Hex display</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isSaveToFile</td>
+                                <td>whether to save to file</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isPauseReceivingDisplay</td>
+                                <td>Whether to suspend receiving</td>
+                            </tr>
+                            <tr>
+                                <td>receive.isAutoBreakFrame</td>
+                                <td>Whether to automatically break the frame</td>
+                            </tr>
+                            <tr>
+                                <td>receive.currentRowIsEmpty</td>
+                                <td>Whether the current row of the receive window is empty</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>receive.get()</td>
+                                <td>refer to receive.getString()</td>
+                            </tr>
+                            <tr>
+                                <td>receive.getString()</td>
+                                <td>currently received string
+                                    <br>1. Use the character encoding converted string ()
+                                    <br>2. String in Hex format (When hexadecimal display is enabled)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>receive.getBytes()</td>
+                                <td>Currently received byte array (raw data)</td>
+                            </tr>
+                            <tr>
+                                <td>receive.write(string)</td>
+                                <td>write a string to the display window<br /><strong>string</strong> the string to send
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>receive.write(string,colorStr)</td>
+                                <td>write a string to the display window
+                                    <br><strong>string</strong> the string to send
+                                    <br><strong>colorStr</strong> color string. For example "red" "yellow" "#FF00FF00"
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>receive.clearLastReceived()</td>
+                                <td>Clear the last received data</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- send -->
+                <h2 id="send">send class</h2>
+                <p>Properties and methods related to sending data.</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>send.isSendFile</td>
+                                <td>Whether to send the file</td>
+                            </tr>
+                            <tr>
+                                <td>send.isHexSend</td>
+                                <td>Whether to send Hex</td>
+                            </tr>
+                            <tr>
+                                <td>send.isTimingSend</td>
+                                <td>Whether to send regularly</td>
+                            </tr>
+                            <tr>
+                                <td>send.isDisplaySendString</td>
+                                <td>Whether to display the sent string</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <div id="sendMethod" class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>send.get()</td>
+                                <td>currently sent string</td>
+                            </tr>
+                            <tr>
+                                <td>send.getString()</td>
+                                <td>currently sent string</td>
+                            </tr>
+                            <tr>
+                                <td>send.getBytes()</td>
+                                <td>Get the currently sent byte array</td>
+                            </tr>
+                            <tr>
+                                <td>send.write(string)</td>
+                                <td>send string</td>
+                            </tr>
+                            <tr>
+                                <td>send.write(string,isHexStr)</td>
+                                <td>Whether to send a string in HEX format
+                                    <br><strong>string</strong> the string to send
+                                    <br><strong>isHexStr</strong> Whether the string is in hexadecimal style
+                                    <br>For example:
+                                    <br><code>send.write("AB CD 12",true);</code>
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <td>send.writeBytes(Array)</td>
+                                <td>Send a byte array
+                                    <br><strong>Array</strong> Uint8Array array, other types will be converted to Uint8Array before being sent.
+                                    <pre><code>//Create an array of length 10, initialize and send
+buf = new Uint8Array(10);
+for (let i = 0; i < 10; i++) 
+    buf[i]=i; 
+send.writeBytes(buf);
+
+//Array 
+buf = Array(2, 3, 4,'5');
+send.writeBytes(buf);
+</code></pre>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>send.writeToReceice(string)</td>
+                                <td>Write a string from the sending script to the receiving window
+                                    <br>It is recommended to use receive.write(string)
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>send.writeToReceice(string,color)</td>
+                                <td>Write a string from the sending script to the receiving window
+                                    <br>It is recommended to use receive.write(string,colorStr)
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="chart">chart</h2>
+                <p>The drawing control operation class, including the method of sending data to the drawing control</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>chart.write(formatStr)</td>
+                                <td>Write data to the drawing control
+                                    <br><strong>formatStr</strong> String conforming to the drawing protocol
+                                    <br>For example:
+                                    <br><code>chart.write("line1=12.2\n");</code>
+                                    <br><code>chart.write("line1=100,line2=200\n");</code>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>chart.write(name,datas)</td>
+                                <td>Write data to the drawing control
+                                    <br><strong>name</strong> Waveform name
+                                    <br><strong>datas</strong> Waveform data (supports numeric values, strings, and
+                                    arrays)
+                                    <br>For example:
+                                    <br><code>chart.write("line1",100);</code>
+                                    <br><code>chart.write("line1","200");</code>
+                                    <br><code>chart.write("line1",[20,"10",50]);</code>
+                                </td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="console">console</h2>
+                <p>Print debug information to the Output window</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>console.log(obj)</td>
+                                <td>print to output window</td>
+                            </tr>
+                            <tr>
+                                <td>console.dir(obj)</td>
+                                <td>format print</td>
+                            </tr>
+                            <tr>
+                                <td>console.error(obj)</td>
+                                <td>error red</td>
+                            </tr>
+                            <tr>
+                                <td>console.warn(obj)</td>
+                                <td>warning dark green</td>
+                            </tr>
+                            <tr>
+                                <td>console.write(obj,,,color)</td>
+                                <td>print object
+                                    <br><strong>obj,,,</strong> supports multiple parameters
+                                    <br><strong>color</strong> The last parameter can control the character color
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>console.time()</td>
+                                <td>start the timer</td>
+                            </tr>
+                            <tr>
+                                <td>console.timeEnd()</td>
+                                <td>End the timer and print the elapsed time in the output window.
+                                    <br>Use with console.time() to count the running time of the code
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2 id="util">util</h2>
+                <p>Auxiliary tools</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>util.isNull(object)</td>
+                                <td>Is it null</td>
+                            </tr>
+                            <tr>
+                                <td>util.isUndefined(object)</td>
+                                <td>Is it undefined</td>
+                            </tr>
+                            <tr>
+                                <td>util.isNullOrUndefined(object)</td>
+                                <td>is null or undefined</td>
+                            </tr>
+                            <tr>
+                                <td>util.timeToString()</td>
+                                <td>get time string h:m:s.ms</td>
+                            </tr>
+                            <tr>
+                                <td>util.hexStringToBytes(string)</td>
+                                <td>String to byte array
+                                    <br> <strong>string</strong> hexadecimal format string <code>"68 65 6C 6C 6F"</code>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesToHexString(bytes)</td>
+                                <td>Convert byte array to hexadecimal string</td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesToInteger(buf, index, len, bigEndian = true)</td>
+                                <td>Byte array to integer
+                                    <br><strong>buf</strong> byte array
+                                    <br><strong>index</strong> start index
+                                    <br><strong>len</strong> The integer occupies the number of bytes
+                                    <br><strong>bigEndian</strong> Use big endian byte order
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>util.bytesTofloat(buf, index, bigEndian = true)</td>
+                                <td>Convert IEEE754 float memory array (4 bytes) to float
+                                    <br><strong>buf</strong> byte array
+                                    <br><strong>index</strong> start index
+                                    <br><strong>bigEndian</strong> Use big endian byte order
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>Type check</h3>
+                    <table class="alt">
+                        <tbody>
+                            <tr>
+                                <td>util.types.isBoolean(object)</td>
+                                <td>Is it a boolean type</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isNumber(object)</td>
+                                <td>Is it a number</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isString(object)</td>
+                                <td>Is it a string</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isFunction(object)</td>
+                                <td>Is it a function</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isInt8Array(object)</td>
+                                <td>is an array of 8-bit signed integers</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isUint8Array(object)</td>
+                                <td>is an array of 8-bit unsigned integers</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isInt16Array(object)</td>
+                                <td>Is it an array of 16-bit signed integers</td>
+                            </tr>
+                            <tr>
+                                <td>util.types.isUint16Array(object)</td>
+                                <td>Is it an array of 16-bit unsigned integers</td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="other">Other</h2>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Definition</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>alert(title, message)</td>
+                                <td>Show alert box
+                                    <br><strong>title</strong> alert box title
+                                    <br><strong>message</strong> alert box message
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>delay(ms)</td>
+                                <td>Async delay (use with caution)
+                                    <br><strong>ms</strong> millisecond
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>sleep(ms)</td>
+                                <td>Suspend a thread (use with caution)
+                                    <br><strong>ms</strong> millisecond
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>

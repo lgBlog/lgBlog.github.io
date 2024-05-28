@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+
+<html lang="en-US">
+
+<head>
+    <title>Help</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="../logo.ico" />
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+</head>
+ 
+<body class="is-preload" >
+    <script>
+        //theme='dark';
+        //var customFontFamily='segoe print';
+        InitConfig();
+    </script>
+    <!-- Sidebar -->
+    <section id="sidebar">
+        <div class="inner">
+            <nav>
+                <ul>
+                    <li><a href="#intro">Welcome</a></li>
+                    <li><a href="#one">Features</a></li>
+                    <li><a href="#two">Waveform</a></li>
+                    <li><a href="#three">Script</a></li>
+                    <li><a href="#four">Change</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Intro -->
+        <section id="intro" class="wrapper style1 fullscreen ">
+            <div class="inner">
+                <h2>Serial debugg assistant</h2>
+                <ul>
+                    <li>The interface is simple and beautiful, and the operation is convenient and fast. It is an
+                        indispensable serial port debugging tool for you.</li>
+                    <li>Whether it is embedded software and hardware development or engineering data debugging, it can
+                        be easily handled.</li>
+                    <li>The high-speed reception is stable and smooth, without stuttering or data loss.</li>
+                    <li>Support TCP/UDP debugging</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- One -->
+        <section class="wrapper style2 spotlights">
+            <section id="one">
+                <div class="content">
+                    <div class="inner">
+                        <h3>Features</h3>
+                        <ul>
+                            <li>Display the data received from the serial port, and support two display modes of string
+                                and hexadecimal.</li>
+                            <li>Supports multiple text encodings ASCII、GB2312、UNICODE、UTF-8、BIG5、shift_jis,Encoding type
+                                can be changed in settings.</li>
+                            <li>Supports multiple baud rates, and also supports custom baud rates. (Baud rates higher
+                                than 115200bps require hardware support).</li>
+                            <li><strong>Auto break frame:</strong> Attach a newline character at the end of the data
+                                packet and display the next packet of data in a newline, making it
+                                easier to observe data changes.</li>
+                            <li><strong>Extension cmd:</strong> Up to 600 extended commands can be created and saved,
+                                and each command can send a piece of data.</li>
+                            <li><strong>Customize Commands list:</strong> Send all the data in the extended command list
+                                with one click and execute each command automatically.</li>
+                            <li><strong>Script:</strong> Use JavaScript scripts to extend functions (such as parsing
+                                received data, adding sending verification, etc.).</li>
+                            <li><strong>Window on top:</strong> kept on top of other windows.hot key "Ctrl + Shift + T"
+                                on or off</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            <section id="two">
+                <div class="content">
+                    <div class="inner">
+                        <h3>Waveform drawing</h3>
+                        <ul>
+                            <li>When a string conforming to the waveform drawing protocol is received, the data will be
+                                automatically parsed and the waveform will be drawn.</li>
+                            <li>Use the Javascript script to parse the received data, and then call the waveform API to
+                                draw the waveform without modifying the sent data.</li>
+                            <li>Create multiple views in the same window, drag the waveform name to switch views.</li>
+                            <li>Open multiple waveform windows to display different waveform data respectively.</li>
+                            <li>Support import and export data.</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="waveforms.html" class="button">Waveform usage instructions</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section id="three">
+                <div class="content">
+                    <div class="inner">
+                        <h3>Script introduction</h3>
+                        <p>App integrated JS V8 engine, supports JavaScript
+                            <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">
+                                standard built-in objects
+                            </a>
+                        </p>
+                        <ul>
+                            <li>The script function is divided into receiving and sending, which can be turned on or off
+                                by ticking the check box。</li>
+                            <li>After the script function is enabled, a red prompt box will be displayed in the
+                                corresponding window, indicating that the script is running.</li>
+                            <li>The receiving script will be executed every time a data packet is received, and the data
+                                will be processed. You need to use<strong> 'receive.write()' </strong>to send the
+                                processing result to the display window.</li>
+                            <li>The sending script will be executed every time data is sent, process the data (such as
+                                adding checksums, etc.), and use<strong> 'send.write()' </strong>to send the processed
+                                data to the serial device.</li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsAPI.html" class="button">Script API details</a></li>
+                        </ul>
+                        <ul class="actions">
+                            <li><a href="JsExample.html" class="button ">Reference examples </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- four -->
+        <section id="four" class="wrapper style2 fade-up">
+            <div class="inner">
+                <h3>Change</h3>
+                <p>Version V9.1.1
+                    <br> 1. Added a search box in the receiving window. Open: "Ctrl + F", close "Esc".
+                    <br> 2. Added network debugging, supporting TCP UDP.
+                </p>
+                <p>Version V9.0.20
+                    <br> 1. Added custom fonts.
+                    <br> 2. Added Reset Script Runtime Environment.<img src="../assets/images/pic01.png" class="pImg">
+                </p>
+                <p>Version V9.0
+                    <br> <a href="JsAPI.html" style="color:#de5c5f;">1. There are significant breaking changes to the JS
+                        Scripting API. Some APIs are no longer compatible.</a>
+                    <br> <a href="waveforms.html">2. Enhanced waveform controls.</a>
+                    <br> 3. Extended commands, script editing, waveform display, use of separate windows.
+                    <br> 4. Window on top "Ctrl + Shift + T" on.
+                    <br> 5. Hardware flow control (CTS, RTS) can be enabled. 
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
