@@ -7,114 +7,120 @@
 <html>
 
 <head>
-	<title>Debuging UART Tool, Serial Port Debug</title>
-	<meta charset="utf-8" />
-	<meta name="keywords" content="Debuging UART" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<meta http-equiv='content-language' content='en-us'>
-	<meta name="description" content="This application is well suited for serial monitoring, full of nice features such as the capability to dislay and send HEX, etc...">
-	<link rel="stylesheet" href="../assets/css/main.css" />
-	<!-- code hight light -->
-	<link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
-	<script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
-	<link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCoreDefault.css" />
-	<script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
-	<!--end code hight light -->
-	<noscript>
-		<link rel="stylesheet" href="../assets/css/noscript.css" />
-	</noscript>
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYVBTNY71"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
-		gtag('config', 'G-JKYVBTNY71');
-	</script>
+    <title>Debuging UART Tool, Serial Port Debug</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Debuging UART" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv='content-language' content='en-us'>
+    <meta name="description"
+        content="This application is well suited for serial monitoring, full of nice features such as the capability to dislay and send HEX, etc...">
+
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- code hight light -->
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
+    <script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+    <!--end code hight light -->
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYVBTNY71"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JKYVBTNY71');
+    </script>
 </head>
 
 <body class="is-preload">
-<script type="text/javascript">
-	SyntaxHighlighter.all();
-</script>
-	<!-- Header -->
-	<header id="header">
-		<a href="../index.html" class="title">Blog</a>
-		<nav>
-			<ul>
-				<li><a href="../index.html">Home</a></li>
-				<!-- <li><a href="generic.html" class="active">Generic</a></li> -->
-				<!-- <li><a href="../elements.html">Elements</a></li> -->
-			</ul>
-		</nav>
-	</header>
+    <script>
+        //customFontFamily='segoe print';
+        InitConfig();
+    </script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="javascript:history.back(-1);">Back</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Main -->
-		<section id="main" class="wrapper">
-			<div class="inner">
-				<h1 class="major">Debuging UART Tool</h1>
-				<h2>Introduction</h2>
-				<ul>
-					<li>Receive and display serial port data.When receiving data at a high baud rate, it is stable, smooth, <b>without stalling, and data loss</b>.</li>
-					<li>The data can be sent or displayed as "character string" or "HEX". You can use JavaScript scripts
-						to process the data.</li>
-					<li><b>Automatic frame break function</b>, Automatically insert a line break between two data
-						packets, the data received multiple times will no longer be crowded
-						together, it is easier to distinguish the data each time. Make the inspection and analysis of
-						the data clearer and more
-						intuitive.</li>
-					<li><b>Waveform display function</b>. The data sent according to the protocol can be displayed as a
-						waveform. Supports simultaneous
-						drawing of multiple waveforms. The ordinate is automatically adjusted to facilitate observation.
-						And support the
-						waveform review function and screenshot function.</li>
-					<li>Support multiple character encoding "ASCII","GB2312","UNICODE","UTF-8","BIG5","shift_jis"</li>
-					<li>The serial port baud rate can be selected as 300bps-1500000bps. (Hardware support is required
-						when the baud
-						rate>115200). Support custom serial port baud rate at the same time.</li>
-					<li><b>Support extended commands</b>, up to 600 groups of custom commands. Convenient for debugging
-						equipment.</li>
-					<li><b>Custom command list</b>, Combine multiple extended commands into a list. Just click once to
-						send, automatically execute each command in the list.</li>
-					<li>Perfectly adapted to high score screens. There is no blurring problem for most software in high
-						score screens.</li>
-				</ul>
-				<h2>Get a lot of users alike</h3>
-					<ul>
-						<li>This application is well suited for serial monitoring, full of nice features such as the
-							capability to dislay and
-							send
-							HEX, etc...</li>
-						<li>The best terminal app for serial debug!</li>
-						<li>It helped me with my Embedded Systems SERCOMM debugging for ADA language. I sometimes also
-							use
-							it as alternative to
-							arduino IDE Serial monitor.</li>
-						<li>Everything worked just like it should. One of the best serial port programs I have ever
-							used. If
-							it could open
-							multiple
-							ports in the same main window, it would be the best.</li>
-						<li>Good use Work has been in use for a year</li>
-						<li>Excellent app, does what I need for my arduino</li>
-						<li>Works great. Love it. It took me a while to figure out some of the UI but eventually I have
-							discovered everything I
-							need. One suggestion... adding support for color escape codes would be awesome. I would be
-							glad
-							to pay for it as an
-							add
-							on.</li>
-					</ul>
-					<span class="image picCenter"><img src="../images/com/pic01.png" alt="serial debug" /></span>
-					<h3>Use scripts to aid in analyzing data</h3>
-					<p>Use the js script to analyze UART receive data and draw graphics</p>
-					<span class="image picCenter"><img src="../images/com/pic03.jpg" alt="read data" /></span>
-					<span class="image picCenter"><img src="../images/com/pic04.jpg" alt="waveform" /></span>
-					<h3>js script</h3>
-					<pre  class="brush:js;">(
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Debuging UART Tool</h1>
+                <h2>Introduction</h2>
+                <ul>
+                    <li>Receive and display serial port data.When receiving data at a high baud rate, it is stable,
+                        smooth, <b>without stalling, and data loss</b>.</li>
+                    <li>The data can be sent or displayed as "character string" or "HEX". You can use JavaScript scripts
+                        to process the data.</li>
+                    <li><b>Automatic frame break function</b>, Automatically insert a line break between two data
+                        packets, the data received multiple times will no longer be crowded
+                        together, it is easier to distinguish the data each time. Make the inspection and analysis of
+                        the data clearer and more
+                        intuitive.</li>
+                    <li><b>Waveform display function</b>. The data sent according to the protocol can be displayed as a
+                        waveform. Supports simultaneous
+                        drawing of multiple waveforms. The ordinate is automatically adjusted to facilitate observation.
+                        And support the
+                        waveform review function and screenshot function.</li>
+                    <li>Support multiple character encoding "ASCII","GB2312","UNICODE","UTF-8","BIG5","shift_jis"</li>
+                    <li>The serial port baud rate can be selected as 300bps-1500000bps. (Hardware support is required
+                        when the baud
+                        rate>115200). Support custom serial port baud rate at the same time.</li>
+                    <li><b>Support extended commands</b>, up to 600 groups of custom commands. Convenient for debugging
+                        equipment.</li>
+                    <li><b>Custom command list</b>, Combine multiple extended commands into a list. Just click once to
+                        send, automatically execute each command in the list.</li>
+                    <li>Perfectly adapted to high score screens. There is no blurring problem for most software in high
+                        score screens.</li>
+                </ul>
+                <h2>Get a lot of users alike</h3>
+                    <ul>
+                        <li>This application is well suited for serial monitoring, full of nice features such as the
+                            capability to dislay and
+                            send
+                            HEX, etc...</li>
+                        <li>The best terminal app for serial debug!</li>
+                        <li>It helped me with my Embedded Systems SERCOMM debugging for ADA language. I sometimes also
+                            use
+                            it as alternative to
+                            arduino IDE Serial monitor.</li>
+                        <li>Everything worked just like it should. One of the best serial port programs I have ever
+                            used. If
+                            it could open
+                            multiple
+                            ports in the same main window, it would be the best.</li>
+                        <li>Good use Work has been in use for a year</li>
+                        <li>Excellent app, does what I need for my arduino</li>
+                        <li>Works great. Love it. It took me a while to figure out some of the UI but eventually I have
+                            discovered everything I
+                            need. One suggestion... adding support for color escape codes would be awesome. I would be
+                            glad
+                            to pay for it as an
+                            add
+                            on.</li>
+                    </ul>
+                    <span class="image picCenter"><img src="../images/com/pic01.png" alt="serial debug" /></span>
+                    <h3>Use scripts to aid in analyzing data</h3>
+                    <p>Use the js script to analyze UART receive data and draw graphics</p>
+                    <span class="image picCenter"><img src="../images/com/pic03.jpg" alt="read data" /></span>
+                    <span class="image picCenter"><img src="../images/com/pic04.jpg" alt="waveform" /></span>
+                    <h3>js script</h3>
+                    <pre class="brush:js;">(
     function main() {
         var str = receive.get();          //Read the Received string
         receive.write(str);               //Prints the received characters
@@ -159,34 +165,33 @@ function StrToBytes(str) {
     return buf;
 }</pre>
 
-					<a href="https://www.microsoft.com/store/apps/9NBLGGH43HDM"
-						class="button icon solid fa-download">Download Serial Debug
-						Assistant </a>
-					<a  download href="../images/com/analyse.js"  
-					class="button icon solid fa-download">analyse.js</a>
-					<p></p>
-					<a  href="../pages/waveforms.html" class="button small">Serial Debug waveform description</a>
-			</div>
-		</section>
-	</div>
+                    <a href="https://www.microsoft.com/store/apps/9NBLGGH43HDM"
+                        class="button icon solid fa-download">Download Serial Debug
+                        Assistant </a>
+                    <a download href="../images/com/analyse.js" class="button icon solid fa-download">analyse.js</a>
+                    <p></p>
+                    <a href="../pages/waveforms.html" class="button small">Serial Debug waveform description</a>
+            </div>
+        </section>
+    </div>
 
-	<!-- Footer -->
-	<footer id="footer" class="wrapper alt">
-		<div class="inner">
-			<ul class="menu">
-				<li>&copy; Untitled. All rights reserved.</li>
-				<!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
-			</ul>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+            </ul>
+        </div>
+    </footer>
 
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrollex.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 

@@ -24,8 +24,6 @@
 .syntaxhighlighter table thead,
 .syntaxhighlighter table caption,
 .syntaxhighlighter textarea {
-  -moz-border-radius: 0 0 0 0 !important;
-  -webkit-border-radius: 0 0 0 0 !important;
   background: none !important;
   border: 0 !important;
   bottom: auto !important;
@@ -36,7 +34,7 @@
   margin: 0 !important;
   outline: 0 !important;
   overflow: visible !important;
-  padding: 0 !important;
+  padding: 1px 0 !important;
   position: static !important;
   right: auto !important;
   text-align: left !important;
@@ -57,7 +55,7 @@
   margin: 1em 0 1em 0 !important;
   position: relative !important;
   overflow: auto !important;
-  font-size: 1em !important;
+  font-size: 1em !important; 
 }
 .syntaxhighlighter.source {
   overflow: hidden !important;
