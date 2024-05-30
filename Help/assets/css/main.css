@@ -1489,6 +1489,7 @@ input[type="radio"]+label:before {
 /* Image */
 
 .image {
+    margin: auto;
     border-radius: 0.25em;
     border: 0;
     display: inline-block;
@@ -1990,11 +1991,11 @@ body.is-ie .spotlights>section {
     width: 100%;
 }
 
-.spotlights>section:nth-child(2) {
+.spotlights>section:nth-child(3n+2) {
     background-color: var(--color-fg-04);
 }
 
-.spotlights>section:nth-child(3) {
+.spotlights>section:nth-child(3n+3) {
     background-color: var(--color-fg-08);
 }
 
