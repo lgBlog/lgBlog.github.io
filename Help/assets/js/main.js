@@ -174,6 +174,15 @@ document.addEventListener('contextmenu', function (event) {
         SelectedText: window.getSelection().toString()
     });
 });
+//后退
+function pageBack() {
 
-
+    var prevPage = window.location.href;
+    history.back(-1);
+    setTimeout(function () {
+        if (window.location.href == prevPage) {
+            window.location.href = './index.html';
+        }
+    }, 500);
+}
 

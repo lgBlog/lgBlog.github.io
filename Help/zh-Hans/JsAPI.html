@@ -19,18 +19,16 @@
 </head>
 
 <body class="is-preload">
-    <script> 
+    <script>
         InitConfig(); 
     </script>
     <!-- Header -->
     <header id="header">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:history.back(-1);">Back</a></li>
+                <li><a href="javascript:pageBack();">Back</a></li>
             </ul>
         </nav>
-
     </header>
 
     <!-- Sidebar -->
@@ -450,7 +448,7 @@ send.writeBytes(buf);
                             </tr>
                             <tr>
                                 <td>file.writeText(path, string)</td>
-                                <td>将字符串写入文件（UTF-8编码） 
+                                <td>将字符串写入文件（UTF-8编码）
                                     <br><strong>path</strong> 文件路径
                                     <br><strong>string</strong> 文本字符串
                                 </td>
@@ -477,7 +475,7 @@ send.writeBytes(buf);
                             </tr>
                             <tr>
                                 <td>file.appendBytes(path, bytes)</td>
-                                <td>将字符字节数组加到文本末尾 
+                                <td>将字符字节数组加到文本末尾
                                     <br><strong>path</strong> 文件路径
                                     <br><strong>bytes</strong> 字节数组
                                 </td>
@@ -488,7 +486,7 @@ send.writeBytes(buf);
                             </tr>
                             <tr>
                                 <td>file.delete(path)</td>
-                                <td>返删除指定的文件
+                                <td>删除指定的文件
                                     <br><strong>path</strong> 文件路径
                                 </td>
                             </tr>

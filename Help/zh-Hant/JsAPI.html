@@ -26,11 +26,9 @@
     <header id="header">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:history.back(-1);">Back</a></li>
+                <li><a href="javascript:pageBack();">Back</a></li>
             </ul>
         </nav>
-
     </header>
 
     <!-- Sidebar -->
@@ -44,6 +42,7 @@
                     <li><a href="#chart">chart</a></li>
                     <li><a href="#console">console</a></li>
                     <li><a href="#util">util</a></li>
+                    <li><a href="#file">file</a></li>
                     <li><a href="#other">other</a></li>
                 </ul>
             </nav>
@@ -420,6 +419,76 @@ send.writeBytes(buf);
                                 <td>是否 16 位無符號整數陣列</td>
                             </tr>
                             
+                        </tbody>
+                    </table>
+                </div>
+                <h2 id="file">file</h2>
+                <p>文件操作</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>方法</th>
+                                <th>描述</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>file.exists(path)</td>
+                                <td>確定指定的檔案是否存在。
+                                    <br><strong>path</strong> 文件路徑
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.readText(path)</td>
+                                <td>將文件中的所有文本讀取到一個字串中。
+                                    <br><strong>path</strong> 文件路徑
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.writeText(path, string)</td>
+                                <td>將字串寫入文件（UTF-8編碼）
+                                    <br><strong>path</strong> 文件路徑
+                                    <br><strong>string</strong> 文本字串
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.appendText(path,str)</td>
+                                <td>將字串新增至文字末尾（UTF-8編碼）
+                                    <br><strong>path</strong> 文件路徑
+                                    <br><strong>string</strong> 文本字串
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.readBytes(path)</td>
+                                <td>將文件的內容讀入一個字節數組
+                                    <br><strong>path</strong> 文件路徑
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.writeBytes(path, bytes)</td>
+                                <td>將字節數組寫入文件
+                                    <br><strong>path</strong> 文件路徑
+                                    <br><strong>bytes</strong> 字節數組
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.appendBytes(path, bytes)</td>
+                                <td>將字元字節數組加到文字末尾
+                                    <br><strong>path</strong> 文件路徑
+                                    <br><strong>bytes</strong> 字節數組
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.getTempPath(path, bytes)</td>
+                                <td>返回目前使用者的臨時資料夾的路徑。 </td>
+                            </tr>
+                            <tr>
+                                <td>file.delete(path)</td>
+                                <td>刪除指定的文件
+                                    <br><strong>path</strong> 檔案路徑
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

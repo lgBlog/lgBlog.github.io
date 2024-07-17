@@ -2,126 +2,130 @@
 <html lang="zh-hant">
 
 <head>
-	<title>波形使用說明</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>波形使用說明</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="串口調試助波形繪製使用說明">
-	<link rel="shortcut icon" href="../logo.ico" />
+    <link rel="shortcut icon" href="../logo.ico" />
     <script src="../assets/js/theme.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css" />
 
 </head>
 
 <body class="is-preload">
-    <script> 
+    <script>
         InitConfig(); 
     </script>
-	<!-- Header -->
-	<header id="header" style="background-color: transparent;">
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="javascript:history.back(-1);">Back</a></li>
-			</ul>
-		</nav>
-	</header>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="javascript:pageBack();">Back</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Main -->
-		<section id="main" class="wrapper">
-			<div class="inner">
-				<h1 class="major">波形繪製</h1>
-				
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">波形繪製</h1>
+
                 <h2>添加波形資訊</h2>
-				<span class="image picCenter"><img src="../assets/images/Graph11.jpg" alt="waveform description" /></span>
-				<ol>
-					<li>輸入波形名稱。</li>
-					<li>選擇波形顏色。</li>
-					<li>按下添加按鈕。</li>
-					<li>剛剛添加的波形名稱將顯示在波形清單中。</li>
-				</ol>
+                <span class="image picCenter"><img src="../assets/images/Graph11.jpg"
+                        alt="waveform description" /></span>
+                <ol>
+                    <li>輸入波形名稱。</li>
+                    <li>選擇波形顏色。</li>
+                    <li>按下添加按鈕。</li>
+                    <li>剛剛添加的波形名稱將顯示在波形清單中。</li>
+                </ol>
 
                 <h2>繪製</h2>
-				<span class="image picCenter"><img src="../assets/images/Graph13.jpg" alt="serial debug" /></span>
-				<p>當串口收到符合波形繪製格式的字串時，會自動繪製到波形介面。</p>
-				<h2> 波形格式</h3>
-					<div class="table-wrapper">
-						<table class="alt">
-							<thead>
-								<tr>
-									<th>波形名稱</th>
-									<th>等號</th>
-									<th>值</th>
-									<th>結束符</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>X1</td>
-									<td>=</td>
-									<td>200</td>
-									<td>\r\n</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<p>使用"\r\n"作為一條繪製的結束
-						<br>多條波形可使用英文 "," 分割.
-						<br>這是演示。 波形名稱 區分大小寫
-					</p>
-					<pre><code>"X1=100,"
+                <span class="image picCenter"><img src="../assets/images/Graph13.jpg" alt="serial debug" /></span>
+                <p>當串口收到符合波形繪製格式的字串時，會自動繪製到波形介面。</p>
+                <h2> 波形格式</h3>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>波形名稱</th>
+                                    <th>等號</th>
+                                    <th>值</th>
+                                    <th>結束符</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>X1</td>
+                                    <td>=</td>
+                                    <td>200</td>
+                                    <td>\r\n</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>使用"\r\n"作為一條繪製的結束
+                        <br>多條波形可使用英文 "," 分割.
+                        <br>這是演示。 波形名稱 區分大小寫
+                    </p>
+                    <pre><code>"X1=100,"
 "X1=100\r\n"
 
 "X1=100,X2=200,"     printf("X1=100,X2=230,");
 "X1=100,X2=200\r\n"  printf("X1=100,X2=230\r\n");</code></pre>
 
-					<p>注意使用print（）函數時使用 “\r\n” 來表示回車換行符。
-						軟體發送區可以直接按回車輸入回車換行符，不可見但游標會移動到下一行，可以點擊十六進位發送會發現字元會有16個十進位數0D 0A 。</p>
+                    <p>注意使用print（）函數時使用 “\r\n” 來表示回車換行符。
+                        軟體發送區可以直接按回車輸入回車換行符，不可見但游標會移動到下一行，可以點擊十六進位發送會發現字元會有16個十進位數0D 0A 。</p>
 
-					<h2>座標軸設置</h2>
-					<span class="image picCenter"><img src="../assets/images/Graph12.jpg" alt="waveform description" /></span>
-					<h2>操作說明</h2>
-					<ol>
-						<li> Y軸坐標自動調整。
-							<br><strong>開：</strong>根據輸入數據自動調整坐標範圍。
-							<br><strong>關：</strong>需要自己輸入坐標最大值和最小值。
-						</li>
-						<li> 自動暫停： 波形長度超過一屏顯示時，按下鼠標左鍵並向右滑動，會自動啟動波形暫停功能，方便對波形進行觀測。</li>
-						
-					</ol>
-					<h3>縮放</h3>
-					<ol>
-						<li>Ctrl + 滾輪 -> 波形縮放</li>
-						<li>X + 滾輪 -> 單獨對X軸坐標範圍進行縮放。</li>
-						<li>Y + 滾輪 -> 單獨對Y軸坐標範圍進行縮放。</li>
-					</ol>
-                    <span class="image picCenter"><img src="../assets/images/pic05.png" alt="help"/></span>
-				</div>
+                    <h4>在Js腳本中使用API​​進行繪圖</h4>
+                    <p> <a href="JsAPI.html#chart">chart.write("x1=100.0\n");</a> </p>
+
+                    <h2>座標軸設置</h2>
+                    <span class="image picCenter"><img src="../assets/images/Graph12.jpg"
+                            alt="waveform description" /></span>
+                    <h2>操作說明</h2>
+                    <ol>
+                        <li> Y軸坐標自動調整。
+                            <br><strong>開：</strong>根據輸入數據自動調整坐標範圍。
+                            <br><strong>關：</strong>需要自己輸入坐標最大值和最小值。
+                        </li>
+                        <li> 自動暫停： 波形長度超過一屏顯示時，按下鼠標左鍵並向右滑動，會自動啟動波形暫停功能，方便對波形進行觀測。</li>
+
+                    </ol>
+                    <h3>縮放</h3>
+                    <ol>
+                        <li>Ctrl + 滾輪 -> 波形縮放</li>
+                        <li>X + 滾輪 -> 單獨對X軸坐標範圍進行縮放。</li>
+                        <li>Y + 滾輪 -> 單獨對Y軸坐標範圍進行縮放。</li>
+                    </ol>
+                    <span class="image picCenter"><img src="../assets/images/pic05.png" alt="help" /></span>
+            </div>
 
 
-		</section>
+        </section>
 
-	</div>
+    </div>
 
-	<!-- Footer -->
-	<footer id="footer" class="wrapper alt">
-		<div class="inner">
-			<ul class="menu">
-				<li>&copy; lingguang. All rights reserved.</li>
-			</ul>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
 
-	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrollex.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 

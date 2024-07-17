@@ -26,8 +26,7 @@
     <header id="header">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:history.back(-1);">Back</a></li>
+                <li><a href="javascript:pageBack();">Back</a></li>
             </ul>
         </nav>
     </header>
@@ -43,6 +42,7 @@
                     <li><a href="#chart">chart</a></li>
                     <li><a href="#console">console</a></li>
                     <li><a href="#util">util</a></li>
+                    <li><a href="#file">file</a></li>
                     <li><a href="#other">other</a></li>
                 </ul>
             </nav>
@@ -421,6 +421,78 @@ send.writeBytes(buf);
                                 <td>Is it an array of 16-bit unsigned integers</td>
                             </tr>
 
+                        </tbody>
+                    </table>
+                </div>
+
+
+                <h2 id="file">file</h2>
+                <p>File operations</p>
+                <div class="table-wrapper">
+                    <table class="alt">
+                        <thead>
+                            <tr>
+                                <th>Method</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>file.exists(path)</td>
+                                <td>Determine if the specified file exists
+                                    <br><strong>path</strong> File path
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.readText(path)</td>
+                                <td>Read all the text in the file into a string
+                                    <br><strong>path</strong> File path
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.writeText(path, string)</td>
+                                <td>Write a string to a file (UTF-8 encoding)
+                                    <br><strong>path</strong> File path
+                                    <br><strong>string</strong> Text string
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.appendText(path,str)</td>
+                                <td>Append a string to the end of a text (UTF-8 encoding)
+                                    <br><strong>path</strong> File path
+                                    <br><strong>string</strong> Text string
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.readBytes(path)</td>
+                                <td>Read the contents of a file into a byte array
+                                    <br><strong>path</strong> File path
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.writeBytes(path, bytes)</td>
+                                <td>Write byte array to file
+                                    <br><strong>path</strong> File path
+                                    <br><strong>bytes</strong> Byte array
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.appendBytes(path, bytes)</td>
+                                <td>Add character byte array to the end of text
+                                    <br><strong>path</strong> File path
+                                    <br><strong>bytes</strong> Byte array
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>file.getTempPath(path, bytes)</td>
+                                <td>Return the path of the current user's temporary folder</td>
+                            </tr>
+                            <tr>
+                                <td>file.delete(path)</td>
+                                <td>Delete specified file
+                                    <br><strong>path</strong> File path
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>

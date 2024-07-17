@@ -17,11 +17,10 @@
         InitConfig(); 
     </script>
     <!-- Header -->
-    <header id="header" style="background-color: transparent;">
+    <header id="header">
         <nav>
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="javascript:history.back(-1);">Back</a></li>
+                <li><a href="javascript:pageBack();">Back</a></li>
             </ul>
         </nav>
     </header>
@@ -79,6 +78,9 @@
 
                     <p>注意使用print()函数时使用“\r\n”来表示回车换行符。
                         软件发送区可以直接按回车输入回车换行符，不可见但光标会移动到下一行，可以点击十六进制发送会发现字符会有16个十进制数0D 0A 。</p>
+
+                    <h4>在Js脚本中使用API进行绘图</h4>
+                    <p> <a href="JsAPI.html#chart">chart.write("x1=100.0\n");</a> </p>
 
                     <h2>坐标轴设置</h2>
 

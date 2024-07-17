@@ -2,11 +2,11 @@
 <html lang="en-US">
 
 <head>
-	<title>Instructions for using the waveform</title>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Instructions for using the waveform</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Instructions for using the serial port debugging aid waveform drawing">
-	<link rel="shortcut icon" href="../logo.ico" />
+    <link rel="shortcut icon" href="../logo.ico" />
     <script src="../assets/js/theme.js"></script>
     <link rel="stylesheet" href="../assets/css/main.css" />
 </head>
@@ -15,117 +15,122 @@
     <script>
         InitConfig();
     </script>
-	<!-- Header -->
-	<header id="header" style="background-color: transparent;">
-		<nav>
-			<ul>
-				<li><a href="index.html">Home</a></li>
-				<li><a href="javascript:history.back(-1);">Back</a></li>
-			</ul>
-		</nav>
-	</header>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="javascript:pageBack();">Back</a></li>
+            </ul>
+        </nav>
+    </header>
 
-	<!-- Wrapper -->
-	<div id="wrapper">
+    <!-- Wrapper -->
+    <div id="wrapper">
 
-		<!-- Main -->
-		<section id="main" class="wrapper">
-			<div class="inner">
-				<h1 class="major">Waveform description</h1>
-				
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Waveform description</h1>
+
                 <h2>Add waveform information</h2>
-				<span class="image picCenter"><img src="../assets/images/Graph11.jpg"
-						alt="waveform description" /></span>
-				<ol>
-					<li>Enter a name for the waveform.</li>
-					<li>Select the waveform color.</li>
-					<li>Click the Add button.</li>
-					<li>The waveform name you just added is displayed in the waveform list.</li>
-				</ol>
+                <span class="image picCenter"><img src="../assets/images/Graph11.jpg"
+                        alt="waveform description" /></span>
+                <ol>
+                    <li>Enter a name for the waveform.</li>
+                    <li>Select the waveform color.</li>
+                    <li>Click the Add button.</li>
+                    <li>The waveform name you just added is displayed in the waveform list.</li>
+                </ol>
 
                 <h2>Draw</h2>
-				<span class="image picCenter"><img src="../assets/images/Graph13.jpg" alt="serial debug" /></span>
-				<p>When the serial port receives a character string conforming to the waveform drawing format, it will
-					be automatically drawn to the waveform interface.</p>
-				<h2>Waveform format</h3>
-					<div class="table-wrapper">
-						<table class="alt">
-							<thead>
-								<tr>
-									<th>Waveform name</th>
-									<th>Equal</th>
-									<th>Value</th>
-									<th>End character</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>X1</td>
-									<td>=</td>
-									<td>200</td>
-									<td>\r\n</td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
-					<p>Use "\r\n" as the end of a drawing.
-						<br>Multiple waveforms can be split using ",".
-						<br>Here's the demo. Waveform name Case Sensitive
-					</p>
-					<pre><code>"X1=100,"
+                <span class="image picCenter"><img src="../assets/images/Graph13.jpg" alt="serial debug" /></span>
+                <p>When the serial port receives a character string conforming to the waveform drawing format, it will
+                    be automatically drawn to the waveform interface.</p>
+                <h2>Waveform format</h3>
+                    <div class="table-wrapper">
+                        <table class="alt">
+                            <thead>
+                                <tr>
+                                    <th>Waveform name</th>
+                                    <th>Equal</th>
+                                    <th>Value</th>
+                                    <th>End character</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>X1</td>
+                                    <td>=</td>
+                                    <td>200</td>
+                                    <td>\r\n</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p>Use "\r\n" as the end of a drawing.
+                        <br>Multiple waveforms can be split using ",".
+                        <br>Here's the demo. Waveform name Case Sensitive
+                    </p>
+                    <pre><code>"X1=100,"
 "X1=100\r\n"
 
 "X1=100,X2=200,"     printf("X1=100,X2=230,");
 "X1=100,X2=200\r\n"  printf("X1=100,X2=230\r\n");</code></pre>
 
-					<p>Note that "\r\n" is used when using the print() function to represent a carriage return and line
-						feed. In the sending area of the software, you can directly press Enter to enter a carriage
-						return and line feed character. It is invisible but the cursor will move to the next line. You
-						can click Hexadecimal to send and you will find that the character will have 16 decimal numbers
-						0D 0A.</p>
+                    <p>Note that "\r\n" is used when using the print() function to represent a carriage return and line
+                        feed. In the sending area of the software, you can directly press Enter to enter a carriage
+                        return and line feed character. It is invisible but the cursor will move to the next line. You
+                        can click Hexadecimal to send and you will find that the character will have 16 decimal numbers
+                        0D 0A.</p>
 
-					<h2>Coordinate settings</h2>
-					<span class="image picCenter"><img src="../assets/images/Graph12.jpg" alt="waveform description" /></span>
-					<h2>Instructions</h2>
-					<ol>
-						<li> The Y-axis coordinates are automatically adjusted.
-							<br><strong>on: </strong>Automatically adjust the coordinate range according to the input data.
-							<br><strong>off: </strong>You need to enter the maximum and minimum coordinates yourself.
-						</li>
-						<li>Auto pause: When the waveform length exceeds one screen display, press the left mouse button and slide to the right to automatically start the waveform pause function, which is convenient for waveform observation.</li>
+                    <h4>Drawing using API in Js script</h4>
+                    <p> <a href="JsAPI.html#chart">chart.write("x1=100.0\n");</a> </p>
+                    <h2>Coordinate settings</h2>
+                    <span class="image picCenter"><img src="../assets/images/Graph12.jpg"
+                            alt="waveform description" /></span>
+                    <h2>Instructions</h2>
+                    <ol>
+                        <li> The Y-axis coordinates are automatically adjusted.
+                            <br><strong>on: </strong>Automatically adjust the coordinate range according to the input
+                            data.
+                            <br><strong>off: </strong>You need to enter the maximum and minimum coordinates yourself.
+                        </li>
+                        <li>Auto pause: When the waveform length exceeds one screen display, press the left mouse button
+                            and slide to the right to automatically start the waveform pause function, which is
+                            convenient for waveform observation.</li>
 
-					</ol>
-					<h3>Zoom</h3>
-					<ol>
-						<li>Ctrl + scroll wheel -> waveform zoom.</li>
-						<li>X + Wheel -> Zoom the X-axis coordinate range independently.</li>
-						<li>Y + Wheel -> Zoom the Y-axis coordinate range independently.</li>
-					</ol>
-                    <span class="image picCenter"><img src="../assets/images/pic05.png" alt="help"/></span>
-			</div>
+                    </ol>
+                    <h3>Zoom</h3>
+                    <ol>
+                        <li>Ctrl + scroll wheel -> waveform zoom.</li>
+                        <li>X + Wheel -> Zoom the X-axis coordinate range independently.</li>
+                        <li>Y + Wheel -> Zoom the Y-axis coordinate range independently.</li>
+                    </ol>
+                    <span class="image picCenter"><img src="../assets/images/pic05.png" alt="help" /></span>
+            </div>
 
 
-		</section>
+        </section>
 
-	</div>
+    </div>
 
-	<!-- Footer -->
-	<footer id="footer" class="wrapper alt">
-		<div class="inner">
-			<ul class="menu">
-				<li>&copy; lingguang. All rights reserved.</li>
-			</ul>
-		</div>
-	</footer>
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; lingguang. All rights reserved.</li>
+            </ul>
+        </div>
+    </footer>
 
-	<!-- Scripts -->
-	<script src="../assets/js/jquery.min.js"></script>
-	<script src="../assets/js/jquery.scrollex.min.js"></script>
-	<script src="../assets/js/jquery.scrolly.min.js"></script>
-	<script src="../assets/js/browser.min.js"></script>
-	<script src="../assets/js/breakpoints.min.js"></script>
-	<script src="../assets/js/util.js"></script>
-	<script src="../assets/js/main.js"></script>
+    <!-- Scripts -->
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
 
 </body>
 

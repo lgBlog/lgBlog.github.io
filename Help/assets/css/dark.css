@@ -17,7 +17,7 @@
     --color-fg-75: rgba(255,255,255, 0.75);
 
     --color-bk: #202020;
-    --color-bk-header: #212224;
+    --color-bk-header: transparent;
     --color-bk-sidebar: #2f3e46;
     --color-bk-select-list: #2f3037;
 
@@ -34,7 +34,7 @@
     --color-sidebar-nav-a-active: #f4f4f4;
 
     --color-line-before: #40501c;
-    --color-line-left: #748f35;
+    --color-line-left: #8fb82e;
     --color-line-right: #ff9900;
     --color-line-right2: #9b5f06;
 
