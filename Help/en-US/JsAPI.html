@@ -36,7 +36,7 @@
         <div class="inner">
             <nav>
                 <ul>
-                    <li><a href="#header">Change</a></li>
+                    <li><a href="#change">Change</a></li>
                     <li><a href="#receive">receive</a></li>
                     <li><a href="#send">send</a></li>
                     <li><a href="#chart">chart</a></li>
@@ -55,7 +55,7 @@
         <!-- Main -->
         <section class="wrapper">
             <div class="inner">
-                <h2 style="color:#de5c5f;">Breaking change</h2>
+                <h2 id="change" style="color:#de5c5f;">Breaking change 8.0 -> 9.0</h2>
                 <ul>
                     <li>receive.isHexDisplay(); changed to receive.isHexDisplay;</li>
                     <li>receive.isAutoBreakFrame(); changed to receive.isAutoBreakFrame;</li>
@@ -137,6 +137,10 @@
                                     <br><strong>string</strong> the string to send
                                     <br><strong>colorStr</strong> color string. For example "red" "yellow" "#FF00FF00"
                                 </td>
+                            </tr>
+                            <tr>
+                                <td>receive.clear()</td>
+                                <td>Clear the receive window</td>
                             </tr>
                             <tr>
                                 <td>receive.clearLastReceived()</td>
@@ -363,8 +367,11 @@ send.writeBytes(buf);
                                 </td>
                             </tr>
                             <tr>
-                                <td>util.bytesToHexString(bytes)</td>
-                                <td>Convert byte array to hexadecimal string</td>
+                                <td>util.bytesToHexString(bytes, isUpper = false)</td>
+                                <td>Convert byte array to hexadecimal string
+                                    <br><strong>bytes</strong> byte array
+                                    <br><strong>isUpper</strong> Uppercase letters (default lowercase letters)
+                                </td>
                             </tr>
                             <tr>
                                 <td>util.bytesToInteger(buf, index, len, bigEndian = true)</td>

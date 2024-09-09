@@ -36,7 +36,7 @@
         <div class="inner">
             <nav>
                 <ul>
-                    <li><a href="#header">中断性变更</a></li>
+                    <li><a href="#change">中断性变更</a></li>
                     <li><a href="#receive">receive</a></li>
                     <li><a href="#send">send</a></li>
                     <li><a href="#chart">chart</a></li>
@@ -55,7 +55,7 @@
         <!-- Main -->
         <section class="wrapper">
             <div class="inner">
-                <h2 style="color:#de5c5f;">中断性变更</h2>
+                <h2 id="change" style="color:#de5c5f;">中断性变更 8.0 -> 9.0</h2>
                 <ul>
                     <li>receive.isHexDisplay(); 变更为 receive.isHexDisplay;</li>
                     <li>receive.isAutoBreakFrame(); 变更为 receive.isAutoBreakFrame;</li>
@@ -135,6 +135,10 @@
                                     <br><strong>string</strong> 要发送的字符串
                                     <br><strong>colorStr</strong> 颜色字符串。例如 "red" "yellow" "#FF00FF00"
                                 </td>
+                            </tr>
+                            <tr>
+                                <td>receive.clear()</td>
+                                <td>清空接收窗口</td>
                             </tr>
                             <tr>
                                 <td>receive.clearLastReceived()</td>
@@ -360,8 +364,11 @@ send.writeBytes(buf);
                                 </td>
                             </tr>
                             <tr>
-                                <td>util.bytesToHexString(bytes)</td>
-                                <td>字节数组转为16进制字符串</td>
+                                <td>util.bytesToHexString(bytes, isUpper = false)</td>
+                                <td>字节数组转为16进制字符串
+                                    <br><strong>bytes</strong> 字节数组
+                                    <br><strong>isUpper</strong> 大写字母(默认小写字母)
+                                </td>
                             </tr>
                             <tr>
                                 <td>util.bytesToInteger(buf, index, len, bigEndian = true)</td>

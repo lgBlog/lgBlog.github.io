@@ -1,0 +1,133 @@
+<!DOCTYPE HTML>
+<!--
+	Hyperspace by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+
+<head>
+    <title>Serial port debug shows both ASCII and HEX</title>
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Serial port debug, Serial port hex ascii" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv='content-language' content='en-us'>
+    <meta name="description"
+        content="This application is well suited for serial monitoring, full of nice features such as the capability to dislay and send HEX, etc...">
+
+    <script src="../assets/js/theme.js"></script>
+    <link rel="stylesheet" href="../assets/css/main.css" />
+    <!-- code hight light -->
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCore.css" />
+    <script type="text/javascript" src="../assets/sh/js/shCore.js"></script>
+    <link rel="stylesheet" type="text/css" href="../assets/sh/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="../assets/sh/js/shBrushJScript.js"></script>
+    <!--end code hight light -->
+    <noscript>
+        <link rel="stylesheet" href="../assets/css/noscript.css" />
+    </noscript>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JKYVBTNY71"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-JKYVBTNY71');
+    </script>
+</head>
+
+<body class="is-preload">
+    <script>
+        //customFontFamily='segoe print';
+        InitConfig();
+    </script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+    </script>
+    <!-- Header -->
+    <header id="header">
+        <nav>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="javascript:history.back(-1);">Back</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+        <!-- Main -->
+        <section id="main" class="wrapper">
+            <div class="inner">
+                <h1 class="major">Serial port debug shows both ASCII and HEX</h1>
+                <p>
+                    Serial debugging software generally supports string display and hexadecimal display. Usually the
+                    switch is achieved
+                    through a checkbox. What if you need to display both ASCII and HEX characters at the same time?
+                    <br>Serial Debug Assistant supports receiving scripts. You can select the receiving script and
+                    implement the corresponding
+                    display logic in the script.
+                    <br>Click the script edit button and create a new script named "Ascii Hex all show" and add the
+                    following code to the
+                    script.
+                </p>
+
+
+                <span class="image picCenter"><img src="../images/com/pic08.png" alt="js " /></span>
+
+                <p>As shown in the figure below, cancel the hexadecimal display and enable the receiving script. When
+                    the serial port
+                    receives data, ASCII and HEX will be displayed at the same time. This is convenient for subsequent
+                    debugging.</p>
+                <span class="image picCenter"><img src="../images/com/pic07.png" alt="serial port" /></span>
+
+                <h3>js script</h3>
+                <pre class="brush:js;">(function main() {
+    let str = receive.get(); //Read the Received string
+    let buf = receive.getBytes();
+        
+    //receive.write(util.timeToString()+'\n');
+        
+    receive.write('ASC -> ', 'Green');
+    receive.write(str); //Show received string
+                        
+    if (!str.endsWith('\n'))
+    receive.write('\n');
+                    
+    receive.write('HEX -> ', 'Peru');
+    receive.write(util.bytesToHexString(buf, true) + '\n');
+    return;
+})();
+</pre>
+
+                <a href="https://www.microsoft.com/store/apps/9NBLGGH43HDM"
+                    class="button icon solid fa-download">Download Serial Debug
+                    Assistant </a>
+                <p></p>
+                <a href="../pages/waveforms.html" class="button small">Serial Debug waveform description</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer id="footer" class="wrapper alt">
+        <div class="inner">
+            <ul class="menu">
+                <li>&copy; Untitled. All rights reserved.</li>
+                <!-- <li>Design: <a href="http://html5up.net">HTML5 UP</a></li> -->
+            </ul>
+        </div>
+    </footer>
+
+    <script src="../assets/js/jquery.min.js"></script>
+    <script src="../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../assets/js/browser.min.js"></script>
+    <script src="../assets/js/breakpoints.min.js"></script>
+    <script src="../assets/js/util.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
